@@ -5,8 +5,8 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import Image from 'next/image'
 
 export function ImpactSection() {
-  const sectionRef = useScrollAnimation()
-  const imageRef = useScrollAnimation()
+  const sectionRef = useScrollAnimation<HTMLDivElement>()
+  const imageRef = useScrollAnimation<HTMLImageElement>()
 
   return (
     <section id="impact" className="py-24 bg-background">

@@ -138,7 +138,7 @@ export function CTASection({
 }
 
 function ActionCard({ action, index }: { action: Action; index: number }) {
-  const cardRef = useScrollAnimation()
+  const cardRef = useScrollAnimation<HTMLDivElement>()
 
   return (
     <div
