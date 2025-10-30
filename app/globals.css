@@ -11,7 +11,9 @@
   --card-foreground: oklch(0.22 0.04 240);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.04 240);
-  --primary: oklch(0.22 0.04 240); /* Navy #0C2C47 - trust and professionalism */
+  --primary: oklch(
+    0.22 0.04 240
+  ); /* Navy #0C2C47 - trust and professionalism */
   --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.38 0.06 160); /* Green #2E5749 - growth and hope */
   --secondary-foreground: oklch(0.99 0 0);

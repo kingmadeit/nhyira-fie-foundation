@@ -1,20 +1,21 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Poppins } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-sans",
   display: "swap",
-})
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nhyirafoundation.org"),
   title: {
-    default: "Nhyira Foundation | Empowering Orphaned Children Through Education in Benin",
+    default:
+      "Nhyira Foundation | Empowering Orphaned Children Through Education in Benin",
     template: "%s | Nhyira Foundation",
   },
   description:
@@ -78,15 +79,15 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   generator: "v0.app",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -131,5 +132,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
