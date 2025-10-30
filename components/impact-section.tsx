@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import Image from 'next/image'
 
 export function ImpactSection() {
   const sectionRef = useScrollAnimation()
@@ -21,7 +22,7 @@ export function ImpactSection() {
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Every donation, every volunteer hour, and every partnership creates ripples of change that extend far
-              beyond the classroom. We're not just teaching children—we're building a foundation for thriving
+              beyond the classroom. We&apos;re not just teaching children—we&apos;re building a foundation for thriving
               communities.
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -37,10 +38,12 @@ export function ImpactSection() {
           </div>
           <div ref={imageRef} className="relative scroll-slide-right">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="/happy-african-children-in-classroom-celebrating-le.jpg"
                 alt="Children celebrating"
                 className="w-full h-full object-cover"
+                width={300}
+                height={500}
               />
             </div>
             <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-secondary/20 rounded-full blur-3xl" />

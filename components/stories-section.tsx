@@ -43,7 +43,9 @@ export function StoriesSection() {
                 className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="aspect-square relative">
-                  <img
+                  <image
+                    width={300}
+                    height={500}
                     src={story.image || "/placeholder.svg"}
                     alt={story.name}
                     className="w-full h-full object-cover"

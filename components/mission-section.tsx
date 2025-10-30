@@ -62,7 +62,7 @@ function ValueCard({
   title,
   description,
   index,
-}: { icon: any; title: string; description: string; index: number }) {
+}: { icon: Icon; title: string; description: string; index: number }) {
   const cardRef = useScrollAnimation()
 
   return (

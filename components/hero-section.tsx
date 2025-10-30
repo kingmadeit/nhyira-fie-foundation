@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
+import Image from 'next/image'
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/african-children-studying-together-in-classroom-be.jpg"
           alt="Children learning together in Benin"
           className="w-full h-full object-cover scale-105"
+          width={300}
+          height={500}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-foreground/70 via-foreground/50 to-primary/40" />
       </div>

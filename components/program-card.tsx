@@ -2,6 +2,7 @@
 
 import { Check } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import Image from 'next/image'
 
 interface ProgramCardProps {
   title: string
@@ -20,10 +21,12 @@ export function ProgramCard({ title, description, image, features, index }: Prog
       className={`group relative overflow-hidden rounded-3xl scroll-fade-up animation-delay-${(index + 1) * 200}`}
     >
       <div className="relative h-[500px] overflow-hidden">
-        <img
+        <Image
           src={image || "/placeholder.svg"}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          width={300}
+          height={500}
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />

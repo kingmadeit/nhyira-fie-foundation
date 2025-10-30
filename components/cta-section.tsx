@@ -10,46 +10,56 @@ interface CTASectionProps {
   showHeading?: boolean
 }
 
+type Action = {
+  icon: typeof ArrowRight;
+  title: string;
+  description: string;
+  action: string;
+  bgGradient: string;
+  accentColor: string;
+  textColor: string;
+}
+
+const actions: Action[] = [
+  {
+    icon: Heart,
+    title: "Donate",
+    description: "Your contribution directly funds educational programs and materials for orphaned children.",
+    action: "Donate Now",
+    bgGradient: "from-accent via-accent/90 to-accent/80", // Yellow - optimism
+    accentColor: "accent",
+    textColor: "text-white", // Dark text for yellow background
+  },
+  {
+    icon: Users,
+    title: "Volunteer",
+    description: "Share your skills and time to make a lasting impact on children's lives and futures.",
+    action: "Get Involved",
+    bgGradient: "from-primary via-primary/90 to-primary/80", // Navy - trust
+    accentColor: "primary",
+    textColor: "text-white",
+  },
+  {
+    icon: Mail,
+    title: "Partner",
+    description: "Join us as an organizational partner to amplify our collective impact across communities.",
+    action: "Connect",
+    bgGradient: "from-secondary via-secondary/90 to-secondary/80", // Green - growth
+    accentColor: "secondary",
+    textColor: "text-white",
+  },
+]
+
 export function CTASection({
-  taxExemptBgColor = "bg-gradient-to-br from-primary to-primary/90",
+  taxExemptBgColor = "bg-accent/20",
   showHeading = true,
 }: CTASectionProps) {
   const sectionRef = useScrollAnimation()
 
-  const actions = [
-    {
-      icon: Heart,
-      title: "Donate",
-      description: "Your contribution directly funds educational programs and materials for orphaned children.",
-      action: "Donate Now",
-      bgGradient: "from-accent via-accent/90 to-accent/80", // Yellow - optimism
-      accentColor: "accent",
-      textColor: "text-white", // Dark text for yellow background
-    },
-    {
-      icon: Users,
-      title: "Volunteer",
-      description: "Share your skills and time to make a lasting impact on children's lives and futures.",
-      action: "Get Involved",
-      bgGradient: "from-primary via-primary/90 to-primary/80", // Navy - trust
-      accentColor: "primary",
-      textColor: "text-white",
-    },
-    {
-      icon: Mail,
-      title: "Partner",
-      description: "Join us as an organizational partner to amplify our collective impact across communities.",
-      action: "Connect",
-      bgGradient: "from-secondary via-secondary/90 to-secondary/80", // Green - growth
-      accentColor: "secondary",
-      textColor: "text-white",
-    },
-  ]
-
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-background via-muted/20 to-background scroll-fade-up"
+      className={`py-24 bg-gradient-to-b from-background via-muted/20 to-background scroll-fade-up ${taxExemptBgColor}`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         {showHeading && (
@@ -127,7 +137,7 @@ export function CTASection({
   )
 }
 
-function ActionCard({ action, index }: { action: any; index: number }) {
+function ActionCard({ action, index }: { action: Action; index: number }) {
   const cardRef = useScrollAnimation()
 
   return (

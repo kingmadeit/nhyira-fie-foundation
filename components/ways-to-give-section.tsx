@@ -4,43 +4,48 @@ import { CreditCard, Calendar, Gift, Building } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
+
+const givingOptions = [
+  {
+    icon: CreditCard,
+    title: "One-Time Donation",
+    description: "Make an immediate impact with a single contribution to support our programs.",
+    cta: "Donate Now",
+    gradient: "from-accent to-accent/90", // Yellow
+    textColor: "text-mint-foreground",
+  },
+  {
+    icon: Calendar,
+    title: "Monthly Giving",
+    description: "Provide sustained support through recurring monthly donations that create lasting change.",
+    cta: "Become a Partner",
+    gradient: "from-secondary to-secondary/90", // Green
+    textColor: "text-secondary-foreground",
+  },
+  {
+    icon: Gift,
+    title: "Honor & Memorial",
+    description: "Make a gift in honor or memory of a loved one to celebrate their legacy.",
+    cta: "Give in Honor",
+    gradient: "from-mint to-mint/90", // Mint
+    textColor: "text-mint-foreground",
+  },
+  {
+    icon: Building,
+    title: "Corporate Partnership",
+    description: "Partner with us to align your company's values with meaningful social impact.",
+    cta: "Partner With Us",
+    gradient: "from-tertiary to-tertiary/90", // Orange
+    textColor: "text-tertiary-foreground",
+  },
+]
+
+console.log(givingOptions);
+
+
 export function WaysToGiveSection() {
   const sectionRef = useScrollAnimation()
 
-  const givingOptions = [
-    {
-      icon: CreditCard,
-      title: "One-Time Donation",
-      description: "Make an immediate impact with a single contribution to support our programs.",
-      cta: "Donate Now",
-      gradient: "from-accent to-accent/90", // Yellow
-      textColor: "text-mint-foreground",
-    },
-    {
-      icon: Calendar,
-      title: "Monthly Giving",
-      description: "Provide sustained support through recurring monthly donations that create lasting change.",
-      cta: "Become a Partner",
-      gradient: "from-secondary to-secondary/90", // Green
-      textColor: "text-secondary-foreground",
-    },
-    {
-      icon: Gift,
-      title: "Honor & Memorial",
-      description: "Make a gift in honor or memory of a loved one to celebrate their legacy.",
-      cta: "Give in Honor",
-      gradient: "from-mint to-mint/90", // Mint
-      textColor: "text-mint-foreground",
-    },
-    {
-      icon: Building,
-      title: "Corporate Partnership",
-      description: "Partner with us to align your company's values with meaningful social impact.",
-      cta: "Partner With Us",
-      gradient: "from-tertiary to-tertiary/90", // Orange
-      textColor: "text-tertiary-foreground",
-    },
-  ]
 
   return (
     <section ref={sectionRef} className="py-24 px-4 scroll-fade-up">
@@ -122,7 +127,7 @@ export function WaysToGiveSection() {
               </div>
               <h3 className="text-3xl font-bold mb-3 text-white">Corporate Partnership</h3>
               <p className="text-white/90 leading-relaxed mb-6">
-                Partner with us to align your company's values with meaningful social impact.
+                Partner with us to align your company&apos;s values with meaningful social impact.
               </p>
             </div>
             <Button

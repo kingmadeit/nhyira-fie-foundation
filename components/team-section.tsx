@@ -5,7 +5,7 @@ export function TeamSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Team</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Dedicated professionals and volunteers working together to create lasting change in children's lives.
+            Dedicated professionals and volunteers working together to create lasting change in children&apos;s lives.
           </p>
         </div>
 

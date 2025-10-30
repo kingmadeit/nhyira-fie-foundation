@@ -63,9 +63,7 @@ export function StatCard({ value, label, description, index }: StatCardProps) {
   return (
     <div
       ref={(node) => {
-        // @ts-ignore
         cardRef.current = node
-        // @ts-ignore
         elementRef.current = node
       }}
       className={`text-center scroll-scale-in animation-delay-${(index + 1) * 100}`}
