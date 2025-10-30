@@ -1,0 +1,294 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Updated color palette to nonprofit-appropriate theme: Navy, Green, Yellow, Orange, Mint, Mauve */
+:root {
+  --background: oklch(0.99 0.002 85);
+  --foreground: oklch(0.22 0.04 240); /* Navy #0C2C47 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 240);
+  --primary: oklch(0.22 0.04 240); /* Navy #0C2C47 - trust and professionalism */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.38 0.06 160); /* Green #2E5749 - growth and hope */
+  --secondary-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.68 0.12 80); /* Yellow #DA9B2B - optimism and warmth */
+  --accent-foreground: oklch(0.22 0.04 240);
+  --tertiary: oklch(0.52 0.12 35); /* Orange #BF512C - compassion and energy */
+  --tertiary-foreground: oklch(0.99 0 0);
+  --mint: oklch(0.8 0.03 180); /* Mint #ABCBCA - calm and accessibility */
+  --mint-foreground: oklch(0.22 0.04 240);
+  --mauve: oklch(0.82 0.02 25); /* Mauve #D6C9C5 - warm neutral */
+  --mauve-foreground: oklch(0.22 0.04 240);
+  --muted: oklch(0.96 0.005 85);
+  --muted-foreground: oklch(0.48 0.02 85);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.005 85);
+  --input: oklch(0.92 0.005 85);
+  --ring: oklch(0.22 0.04 240);
+  --chart-1: oklch(0.22 0.04 240);
+  --chart-2: oklch(0.38 0.06 160);
+  --chart-3: oklch(0.68 0.12 80);
+  --chart-4: oklch(0.52 0.12 35);
+  --chart-5: oklch(0.8 0.03 180);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.99 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.09 0.01 85);
+  --foreground: oklch(0.99 0.002 85);
+  --card: oklch(0.12 0.01 85);
+  --card-foreground: oklch(0.99 0.002 85);
+  --popover: oklch(0.12 0.01 85);
+  --popover-foreground: oklch(0.99 0.002 85);
+  --primary: oklch(0.32 0.06 240);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.48 0.08 160);
+  --secondary-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.78 0.14 80);
+  --accent-foreground: oklch(0.09 0 0);
+  --tertiary: oklch(0.62 0.14 35);
+  --tertiary-foreground: oklch(0.99 0 0);
+  --mint: oklch(0.7 0.04 180);
+  --mint-foreground: oklch(0.09 0 0);
+  --mauve: oklch(0.72 0.03 25);
+  --mauve-foreground: oklch(0.09 0 0);
+  --muted: oklch(0.18 0.02 85);
+  --muted-foreground: oklch(0.708 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.22 0.02 85);
+  --input: oklch(0.22 0.02 85);
+  --ring: oklch(0.32 0.06 240);
+  --chart-1: oklch(0.32 0.06 240);
+  --chart-2: oklch(0.48 0.08 160);
+  --chart-3: oklch(0.78 0.14 80);
+  --chart-4: oklch(0.62 0.14 35);
+  --chart-5: oklch(0.7 0.04 180);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.99 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.99 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: "Poppins", "system-ui", "sans-serif";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-mint: var(--mint);
+  --color-mint-foreground: var(--mint-foreground);
+  --color-mauve: var(--mauve);
+  --color-mauve-foreground: var(--mauve-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added smooth scroll behavior for better UX */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Adding CSS-only scroll animations for fade-in and slide-up effects */
+@layer utilities {
+  /* Keyframe animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Updated animation classes to work with scroll trigger */
+  /* Base state - hidden before scroll */
+  .scroll-animate {
+    opacity: 0;
+  }
+
+  /* Triggered state when element enters viewport */
+  .scroll-animate.animate-in {
+    animation-fill-mode: forwards;
+  }
+
+  /* Animation variants */
+  .scroll-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .scroll-fade-up.animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .scroll-fade-in {
+    opacity: 0;
+  }
+
+  .scroll-fade-in.animate-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .scroll-slide-left.animate-in {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .scroll-slide-right {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .scroll-slide-right.animate-in {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .scroll-scale-in {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  .scroll-scale-in.animate-in {
+    animation: scaleIn 0.8s ease-out forwards;
+  }
+
+  /* Staggered animation delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}
