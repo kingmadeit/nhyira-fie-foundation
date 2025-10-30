@@ -1,24 +1,32 @@
-"use client"
+"use client";
 
-import { Check } from "lucide-react"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import Image from 'next/image'
+import { Check } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import Image from "next/image";
 
 interface ProgramCardProps {
-  title: string
-  description: string
-  image: string
-  features: string[]
-  index: number
+  title: string;
+  description: string;
+  image: string;
+  features: string[];
+  index: number;
 }
 
-export function ProgramCard({ title, description, image, features, index }: ProgramCardProps) {
-  const cardRef = useScrollAnimation()
+export function ProgramCard({
+  title,
+  description,
+  image,
+  features,
+  index,
+}: ProgramCardProps) {
+  const cardRef = useScrollAnimation<HTMLDivElement>();
 
   return (
     <div
       ref={cardRef}
-      className={`group relative overflow-hidden rounded-3xl scroll-fade-up animation-delay-${(index + 1) * 200}`}
+      className={`group relative overflow-hidden rounded-3xl scroll-fade-up animation-delay-${
+        (index + 1) * 200
+      }`}
     >
       <div className="relative h-[500px] overflow-hidden">
         <Image
@@ -53,5 +61,5 @@ export function ProgramCard({ title, description, image, features, index }: Prog
         </div>
       </div>
     </div>
-  )
+  );
 }
